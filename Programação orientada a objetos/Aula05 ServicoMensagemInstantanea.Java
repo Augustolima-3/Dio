@@ -1,20 +1,8 @@
 public class ServicoMensagemInstantanea {
-    public void enviarMensagem(){
-        //primeiro verificar a internet
-        validarConectadoInternet();
-        System.out.println("Enviando mensagem");
-        //depois de enviar, salva o histórico
-        salvarHistoricoMensagem();
-    }
-    public void receberMensagem(){
-        System.out.println("Recebendo mensagem");
-    }
+   public abstract void enviarMensagem();
+    public abstract void receberMensagem();
 
-    //métodos privados, visíveis somente na classe
-    private void validarConectadoInternet(){
-        System.out.println("Validando conexão com a internet");
-    }
-    private void salvarHistoricoMensagem(){
-        System.out.println("Salvando histórico de mensagem");
-    }
+    //somente os filhos conhecem este método
+    protected void validarConectadoInternet(){
+        System.out.println("Validando se está conectado a internet.");
 }
