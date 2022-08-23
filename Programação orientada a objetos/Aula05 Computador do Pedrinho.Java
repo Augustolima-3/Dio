@@ -1,10 +1,26 @@
 public class ComputadorPedrinho {
+    import Apps.FacebookMessenger;
+import Apps.MSNMessenger;
+import Apps.Telegram;
+
+public class ComputadorPedrinho {
     public static void main(String[] args) {
-        //abrindo o MSN messenger
-        MSNMessenger msn = new MSNMessenger();
+        ServicoMensagemInstantanea smi = null;
+        /*
+        Não se sabe qual app
+        Mas qualquer um deverá enviar e receber mensagem
+         */
+        String appEscolhido = "msn";
 
-        msn.enviarMensagem();
+        if (appEscolhido.equals("msn"))
+            smi = new MSNMessenger();
+        else if (appEscolhido.equals("fbm"))
+            smi = new FacebookMessenger();
+        else if (appEscolhido.equals("tlg"))
+            smi = new Telegram();
 
-        msn.receberMensagem();
+        smi.enviarMensagem();
+        smi.receberMensagem();
     }
 }
+
